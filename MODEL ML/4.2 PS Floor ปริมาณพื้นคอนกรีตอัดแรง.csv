@@ -1,0 +1,39 @@
+﻿4.2 PS Floor ปริมาณพื้นคอนกรีตอัดแรง,,,,,,,,,,,
+Level,Type,Type Mark,Default Thickness,Perimeter,Area,Formwork (ALL),Volume,Count,Structural Material,Description
+,,,,,,,,,,
+Level 2,Post Tension - 250 mm. Thk. LL=100, SDL=120,,0.25 m,15.20 m,0.04 m²,3.84 m²,0.01 m³,1,Concrete Post-Tension Slab,320 ksc
+Level 2,Post Tension - 250 mm. Thk. LL=200, SDL=250,,0.25 m,774.87 m,524.70 m²,718.42 m²,131.18 m³,28,Concrete Post-Tension Slab,320 ksc
+Level 2,Post Tension - 250 mm. Thk. LL=200, SDL=250 (W),,0.25 m,26.69 m,14.14 m²,20.81 m²,3.53 m³,3,Concrete Post-Tension Slab,320 ksc
+Level 2,Post Tension - 250 mm. Thk. LL=400, SDL=120,,0.25 m,149.53 m,113.46 m²,150.84 m²,28.36 m³,1,Concrete Post-Tension Slab,320 ksc
+33,,,,966.29 m,652.34 m²,893.92 m²,163.09 m³,,,
+Level 3,Post Tension - 250 mm. Thk. LL=200, SDL=250,,0.25 m,774.77 m,525.27 m²,718.97 m²,131.32 m³,28,Concrete Post-Tension Slab,320 ksc
+Level 3,Post Tension - 250 mm. Thk. LL=200, SDL=250 (W),,0.25 m,26.69 m,14.14 m²,20.81 m²,3.53 m³,3,Concrete Post-Tension Slab,320 ksc
+Level 3,Post Tension - 250 mm. Thk. LL=400, SDL=120,,0.25 m,145.23 m,110.44 m²,146.75 m²,27.61 m³,1,Concrete Post-Tension Slab,320 ksc
+32,,,,946.69 m,649.85 m²,886.52 m²,162.46 m³,,,
+Level 4,Post Tension - 250 mm. Thk. LL=200, SDL=250,,0.25 m,774.77 m,525.22 m²,718.92 m²,131.31 m³,28,Concrete Post-Tension Slab,320 ksc
+Level 4,Post Tension - 250 mm. Thk. LL=200, SDL=250 (W),,0.25 m,26.69 m,14.14 m²,20.81 m²,3.53 m³,3,Concrete Post-Tension Slab,320 ksc
+Level 4,Post Tension - 250 mm. Thk. LL=400, SDL=120,,0.25 m,145.23 m,110.44 m²,146.75 m²,27.61 m³,1,Concrete Post-Tension Slab,320 ksc
+32,,,,946.69 m,649.80 m²,886.47 m²,162.45 m³,,,
+Level 5,Post Tension - 250 mm. Thk. LL=200, SDL=250,,0.25 m,750.54 m,502.62 m²,690.26 m²,125.65 m³,27,Concrete Post-Tension Slab,320 ksc
+Level 5,Post Tension - 250 mm. Thk. LL=200, SDL=250 (W),,0.25 m,48.51 m,36.74 m²,48.87 m²,9.19 m³,4,Concrete Post-Tension Slab,320 ksc
+Level 5,Post Tension - 250 mm. Thk. LL=400, SDL=120,,0.25 m,145.23 m,110.44 m²,146.75 m²,27.61 m³,1,Concrete Post-Tension Slab,320 ksc
+32,,,,944.29 m,649.80 m²,885.87 m²,162.45 m³,,,
+Level 6,Post Tension - 250 mm. Thk. LL=200, SDL=250,,0.25 m,750.54 m,502.62 m²,690.26 m²,125.65 m³,27,Concrete Post-Tension Slab,320 ksc
+Level 6,Post Tension - 250 mm. Thk. LL=200, SDL=250 (W),,0.25 m,44.11 m,23.30 m²,34.33 m²,5.83 m³,4,Concrete Post-Tension Slab,320 ksc
+Level 6,Post Tension - 250 mm. Thk. LL=400, SDL=120,,0.25 m,145.23 m,110.44 m²,146.75 m²,27.61 m³,1,Concrete Post-Tension Slab,320 ksc
+32,,,,939.89 m,636.36 m²,871.33 m²,159.09 m³,,,
+Level 7,Post Tension - 250 mm. Thk. LL=200, SDL=250,,0.25 m,750.54 m,502.62 m²,690.26 m²,125.65 m³,27,Concrete Post-Tension Slab,320 ksc
+Level 7,Post Tension - 250 mm. Thk. LL=200, SDL=250 (W),,0.25 m,44.11 m,23.30 m²,34.33 m²,5.83 m³,4,Concrete Post-Tension Slab,320 ksc
+Level 7,Post Tension - 250 mm. Thk. LL=400, SDL=120,,0.25 m,145.23 m,110.44 m²,146.75 m²,27.61 m³,1,Concrete Post-Tension Slab,320 ksc
+32,,,,939.89 m,636.36 m²,871.33 m²,159.09 m³,,,
+Level 8,Post Tension - 250 mm. Thk. LL=200, SDL=250,,0.25 m,535.25 m,363.63 m²,497.44 m²,90.91 m³,18,Concrete Post-Tension Slab,320 ksc
+Level 8,Post Tension - 250 mm. Thk. LL=200, SDL=250 (W),,0.25 m,34.51 m,18.18 m²,26.81 m²,4.55 m³,3,Concrete Post-Tension Slab,320 ksc
+Level 8,Post Tension - 250 mm. Thk. LL=400, SDL=120,,0.25 m,125.09 m,93.49 m²,124.76 m²,23.37 m³,1,Concrete Post-Tension Slab,320 ksc
+Level 8,Post Tension - 300 mm. Thk. LL=400, SDL=600 (W),,0.30 m,88.50 m,162.71 m²,189.26 m²,48.81 m³,2,Concrete Post-Tension Slab,320 ksc
+24,,,,783.36 m,638.01 m²,838.27 m²,167.64 m³,,,
+Level 9,Post Tension - 250 mm. Thk. LL=200, SDL=170 (W),,0.25 m,169.80 m,275.50 m²,317.95 m²,68.88 m³,4,Concrete Post-Tension Slab,320 ksc
+Level 9,Post Tension - 250 mm. Thk. LL=500, SDL=120 (W),,0.25 m,15.00 m,11.96 m²,15.71 m²,2.99 m³,1,Concrete Post-Tension Slab,320 ksc
+Level 9,Post Tension - 300 mm. Thk. LL=400, SDL=600 (W),,0.30 m,25.00 m,15.77 m²,23.27 m²,4.73 m³,2,Concrete Post-Tension Slab,320 ksc
+Level 9,Post Tension - 350 mm. Thk. (W),,0.35 m,152.48 m,201.84 m²,255.21 m²,70.64 m³,4,Concrete Post-Tension Slab,320 ksc
+11,,,,362.28 m,505.07 m²,612.14 m²,147.24 m³,,,
+,,,,6829.37 m,5017.59 m²,6745.86 m²,1283.51 m³,,,

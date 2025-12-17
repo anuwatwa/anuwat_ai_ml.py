@@ -1,0 +1,39 @@
+﻿5.0 Wall ปริมาณผนัง,,,,,,,,,,,,
+Base Constraint,Type,Type Mark,Width,Unconnected Height,Length,Area,Formwork,Volume,Count,Structural Material,Description
+,,,,,,,,,,,
+Foundation,Methane Wall - 200 mm Thk.,,0.20 m,9.80 m,10.31 m,25.01 m²,50.50 m²,5.00 m³,4,Concrete Water Tank,
+Foundation,WT1 - 250 mm Thk.,,0.25 m,14.75 m,26.71 m,78.78 m²,157.56 m²,19.70 m³,5,Concrete Water Tank,
+Foundation,WT2 - 250 mm Thk.,,0.25 m,2.95 m,10.25 m,29.51 m²,60.49 m²,7.38 m³,1,Concrete Water Tank,
+Foundation,WT3 - 300 mm Thk.,,0.30 m,13.00 m,25.20 m,81.88 m²,163.77 m²,24.57 m³,4,Concrete Water Tank,
+Foundation,WT3 - 600 mm Thk.,,0.60 m,10.00 m,24.00 m,59.99 m²,119.98 m²,35.99 m³,4,Concrete Water Tank,
+Foundation,กันซึม บ่อลิฟต์ (ภายนอก),,0.01 m,6.60 m,15.04 m,24.82 m²,49.64 m²,0.25 m³,4,กันซึม,
+Foundation,กันซึม บ่อลิฟต์ (ภายใน),,0.01 m,6.60 m,12.96 m,21.38 m²,42.76 m²,0.21 m³,4,กันซึม,
+26,,,,63.70 m,124.46 m,321.37 m²,644.71 m²,93.09 m³,,,
++0.00 Road,LC01 - 250 mm Thk. (F-1),,0.25 m,6.60 m,14.00 m,23.10 m²,46.20 m²,5.78 m³,4,Concrete Shear Wall,320 ksc
++0.00 Road,SC01 - 250 mm Thk. (1-R),,0.25 m,1.00 m,18.60 m,4.65 m²,9.30 m²,1.16 m³,4,Concrete Shear Wall,320 ksc
+8,,,,7.60 m,32.60 m,27.75 m²,55.50 m²,6.94 m³,,,
+Level 1,LC01 - 250 mm Thk. (1-R),,0.25 m,18.90 m,11.93 m,37.59 m²,75.18 m²,9.40 m³,6,Concrete Shear Wall,320 ksc
+Level 1,SC01 - 250 mm Thk. (1-R),,0.25 m,16.00 m,14.30 m,45.75 m²,91.50 m²,11.44 m³,5,Concrete Shear Wall,320 ksc
+11,,,,34.90 m,26.23 m,83.34 m²,166.69 m²,20.84 m³,,,
+Level 2,LC01 - 250 mm Thk. (1-R),,0.25 m,16.80 m,11.93 m,33.42 m²,66.83 m²,8.35 m³,6,Concrete Shear Wall,320 ksc
+Level 2,SC01 - 250 mm Thk. (1-R),,0.25 m,14.00 m,14.30 m,40.03 m²,80.06 m²,10.01 m³,5,Concrete Shear Wall,320 ksc
+11,,,,30.80 m,26.23 m,73.45 m²,146.89 m²,18.36 m³,,,
+Level 3,LC01 - 250 mm Thk. (1-R),,0.25 m,16.80 m,11.93 m,33.42 m²,66.83 m²,8.35 m³,6,Concrete Shear Wall,320 ksc
+Level 3,SC01 - 250 mm Thk. (1-R),,0.25 m,14.00 m,14.30 m,40.03 m²,80.06 m²,10.01 m³,5,Concrete Shear Wall,320 ksc
+11,,,,30.80 m,26.23 m,73.45 m²,146.89 m²,18.36 m³,,,
+Level 4,LC01 - 250 mm Thk. (1-R),,0.25 m,16.80 m,11.93 m,33.42 m²,66.83 m²,8.35 m³,6,Concrete Shear Wall,320 ksc
+Level 4,SC01 - 250 mm Thk. (1-R),,0.25 m,14.00 m,14.30 m,40.03 m²,80.06 m²,10.01 m³,5,Concrete Shear Wall,320 ksc
+11,,,,30.80 m,26.23 m,73.45 m²,146.89 m²,18.36 m³,,,
+Level 5,LC01 - 250 mm Thk. (1-R),,0.25 m,16.80 m,11.93 m,33.42 m²,66.83 m²,8.35 m³,6,Concrete Shear Wall,320 ksc
+Level 5,SC01 - 250 mm Thk. (1-R),,0.25 m,14.00 m,14.30 m,40.03 m²,80.06 m²,10.01 m³,5,Concrete Shear Wall,320 ksc
+11,,,,30.80 m,26.23 m,73.45 m²,146.89 m²,18.36 m³,,,
+Level 6,LC01 - 250 mm Thk. (1-R),,0.25 m,16.80 m,11.93 m,33.42 m²,66.83 m²,8.35 m³,6,Concrete Shear Wall,320 ksc
+Level 6,SC01 - 250 mm Thk. (1-R),,0.25 m,14.00 m,14.30 m,40.03 m²,80.06 m²,10.01 m³,5,Concrete Shear Wall,320 ksc
+11,,,,30.80 m,26.23 m,73.45 m²,146.89 m²,18.36 m³,,,
+Level 7,LC01 - 250 mm Thk. (1-R),,0.25 m,16.80 m,11.93 m,33.42 m²,66.83 m²,8.35 m³,6,Concrete Shear Wall,320 ksc
+Level 7,SC01 - 250 mm Thk. (1-R),,0.25 m,14.00 m,14.30 m,40.03 m²,80.06 m²,10.01 m³,5,Concrete Shear Wall,320 ksc
+11,,,,30.80 m,26.23 m,73.45 m²,146.89 m²,18.36 m³,,,
+Level 8,LC01 - 250 mm Thk. (1-R),,0.25 m,25.50 m,11.93 m,50.72 m²,101.44 m²,12.68 m³,6,Concrete Shear Wall,320 ksc
+Level 8,SC01 - 250 mm Thk. (1-R),,0.25 m,27.50 m,14.30 m,78.63 m²,157.27 m²,19.66 m³,5,Concrete Shear Wall,320 ksc
+11,,,,53.00 m,26.23 m,129.35 m²,258.71 m²,32.34 m³,,,
+122,,,,344.00 m,366.90 m,1002.50 m²,2006.96 m²,263.38 m³,,,

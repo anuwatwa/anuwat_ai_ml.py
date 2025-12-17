@@ -1,0 +1,25 @@
+﻿6.1 Structural Steel ปริมาณโครงเหล็กคาน,,,,,,,,,,
+Reference Level,Type,Description,Cut Length,Volume,Count,Structural Material
+,,,,,,
+Foundation,WF - 250x250x9x14 mm.,STEEL,5.02 m,0.04 m³,2,Steel, 45-345
+Foundation: 2,,,5.02 m,0.04 m³,,
+Level 1,CSX1 - 150x150x7x10 mm.,STEEL,6.47 m,0.02 m³,2,Steel, 45-345
+Level 1: 2,,,6.47 m,0.02 m³,,
+Level 2,BS1 - WF200x150x6x9 mm.,STEEL,11.47 m,0.04 m³,2,Steel, 45-345
+Level 2,RHS - 100x50x3.2 mm.,STEEL,27.23 m,0.03 m³,7,Steel, 45-345
+Level 2,WF - 100x100x6x8 mm.,STEEL,1.90 m,0.00 m³,3,Steel, 45-345
+Level 2: 12,,,40.60 m,0.07 m³,,
+Level 3,WF - 100x100x6x8 mm.,STEEL,1.90 m,0.00 m³,3,Steel, 45-345
+Level 3: 3,,,1.90 m,0.00 m³,,
+Level 4,WF - 100x100x6x8 mm.,STEEL,1.90 m,0.00 m³,3,Steel, 45-345
+Level 4: 3,,,1.90 m,0.00 m³,,
+Level 5,WF - 100x100x6x8 mm.,STEEL,1.90 m,0.00 m³,3,Steel, 45-345
+Level 5: 3,,,1.90 m,0.00 m³,,
+Level 8,RHS - 25x25x1.6 mm.,STEEL,12.25 m,0.00 m³,14,Steel, 45-345
+Level 8,RHS - 45x45x2.3 mm.,STEEL,148.72 m,0.06 m³,85,Steel, 45-345
+Level 8: 99,,,160.96 m,0.06 m³,,
+Level 9,CSR1 - WF200x200x8x12 mm.,STEEL,5.11 m,0.03 m³,2,Steel, 45-345
+Level 9: 2,,,5.11 m,0.03 m³,,
+ระดับหลังคาห้องปั๊มน้ำ,RHS - 200x100x4.5 mm.,STEEL,25.90 m,0.07 m³,5,Steel, 45-345
+ระดับหลังคาห้องปั๊มน้ำ: 5,,,25.90 m,0.07 m³,,
+Grand total,,,249.77 m,0.30 m³,,

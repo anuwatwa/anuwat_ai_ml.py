@@ -1,0 +1,116 @@
+﻿3.1 Framing ปริมาณคาน by Level,,,,,,,,,,
+Reference Level,Type,Count,B,H,Cut Length,Length,Formwork (H cut),Volume,Description,Structural Material,Lean + Sand
+,,,,,,,,,,,
+Level 1,BF1 - 200x450 mm.,2,0.20 m,0.45 m,2.90 m,3.20 m,3.52 m²,0.26 m³,,Concrete Beam,0.12 m³
+Level 1,BF2 - 300x700 mm.,2,0.30 m,0.70 m,11.20 m,11.65 m,19.81 m²,2.35 m³,,Concrete Beam,0.44 m³
+Level 1,BF3 - 300x700 mm.,1,0.30 m,0.70 m,4.78 m,5.07 m,8.62 m²,1.00 m³,,Concrete Beam,0.19 m³
+Level 1,BF4 - 300x700 mm.,1,0.30 m,0.70 m,4.85 m,5.14 m,8.74 m²,1.02 m³,,Concrete Beam,0.19 m³
+Level 1,BF5 - 275x550 mm.,1,0.28 m,0.55 m,6.63 m,6.48 m,8.90 m²,1.00 m³,,Concrete Beam,0.23 m³
+Level 1,BZ1 - 150x400 mm.,1,0.15 m,0.40 m,0.30 m,0.45 m,0.43 m²,0.02 m³,,Concrete Beam,0.02 m³
+Level 1,BZ1C - 150x400 mm.,2,0.15 m,0.40 m,2.21 m,2.05 m,1.94 m²,0.13 m³,,Concrete Beam,0.08 m³
+Level 1: 10,,10,,,32.87 m,34.03 m,51.96 m²,5.79 m³,,,1.27 m³
+Level 2,B1 - 200x600 mm.,1,0.20 m,0.60 m,7.02 m,8.25 m,11.55 m²,0.84 m³,,Concrete Beam,0.26 m³
+Level 2,B2C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.55 m,4.85 m²,0.33 m³,,Concrete Beam,0.09 m³
+Level 2,B3 - 200x450 mm.,4,0.20 m,0.45 m,13.49 m,13.55 m,14.91 m²,1.21 m³,,Concrete Beam,0.45 m³
+Level 2,B4C - 200x600 mm.,1,0.20 m,0.60 m,1.29 m,1.30 m,1.82 m²,0.16 m³,,Concrete Beam,0.05 m³
+Level 2,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 2,BL2C - 250x600 mm.,2,0.25 m,0.60 m,3.40 m,3.40 m,4.93 m²,0.51 m³,,Concrete Beam,0.14 m³
+Level 2,BX1 - 250x450 mm.,2,0.25 m,0.45 m,4.40 m,4.65 m,3.43 m²,0.27 m³,,Concrete Beam,0.18 m³
+Level 2,BX1C - 250x450 mm.,4,0.25 m,0.45 m,4.13 m,4.38 m,3.34 m²,0.27 m³,,Concrete Beam,0.19 m³
+Level 2,BX2 - 250x500 mm.,1,0.25 m,0.50 m,4.50 m,4.75 m,3.56 m²,0.28 m³,,Concrete Beam,0.17 m³
+Level 2,BX2C - 250x500 mm.,2,0.25 m,0.50 m,1.30 m,1.30 m,1.18 m²,0.11 m³,,Concrete Beam,0.07 m³
+Level 2,BZ1 - 150x400 mm.,1,0.15 m,0.40 m,0.30 m,0.45 m,0.34 m²,0.01 m³,,Concrete Beam,0.02 m³
+Level 2,BZ1C - 150x400 mm.,2,0.15 m,0.40 m,2.21 m,2.05 m,1.53 m²,0.10 m³,,Concrete Beam,0.08 m³
+Level 2: 24,,24,,,46.96 m,49.59 m,54.84 m²,4.43 m³,,,1.83 m³
+Level 3,B3 - 200x450 mm.,5,0.20 m,0.45 m,14.35 m,15.15 m,13.81 m²,1.02 m³,,Concrete Beam,0.51 m³
+Level 3,B4C - 200x600 mm.,1,0.20 m,0.60 m,1.30 m,1.30 m,1.82 m²,0.16 m³,,Concrete Beam,0.05 m³
+Level 3,B5 - 200x600 mm.,1,0.20 m,0.60 m,7.04 m,8.25 m,11.55 m²,0.84 m³,,Concrete Beam,0.26 m³
+Level 3,B6C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.45 m,3.92 m²,0.27 m³,,Concrete Beam,0.09 m³
+Level 3,B7 - 200x600 mm.,1,0.20 m,0.60 m,5.00 m,5.20 m,6.84 m²,0.56 m³,,Concrete Beam,0.17 m³
+Level 3,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 3,BL2C - 250x600 mm.,2,0.25 m,0.60 m,3.40 m,3.40 m,4.93 m²,0.51 m³,,Concrete Beam,0.14 m³
+Level 3,BST2 - 500x250 mm.,1,0.50 m,0.25 m,2.90 m,3.10 m,2.17 m²,0.15 m³,,Concrete Beam,0.16 m³
+Level 3,BX1 - 250x450 mm.,2,0.25 m,0.45 m,4.40 m,4.65 m,3.43 m²,0.27 m³,,Concrete Beam,0.18 m³
+Level 3,BX1C - 250x450 mm.,4,0.25 m,0.45 m,4.13 m,4.38 m,3.34 m²,0.27 m³,,Concrete Beam,0.19 m³
+Level 3,BX2 - 250x500 mm.,1,0.25 m,0.50 m,4.50 m,4.75 m,3.56 m²,0.28 m³,,Concrete Beam,0.17 m³
+Level 3,BX2C - 250x500 mm.,2,0.25 m,0.50 m,1.30 m,1.30 m,1.18 m²,0.11 m³,,Concrete Beam,0.07 m³
+Level 3: 24,,24,,,53.23 m,56.89 m,59.96 m²,4.77 m³,,,2.11 m³
+Level 4,B4C - 200x600 mm.,1,0.20 m,0.60 m,1.30 m,1.30 m,1.82 m²,0.16 m³,,Concrete Beam,0.05 m³
+Level 4,B5 - 200x600 mm.,1,0.20 m,0.60 m,7.05 m,8.25 m,11.55 m²,0.85 m³,,Concrete Beam,0.26 m³
+Level 4,B6C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.45 m,3.92 m²,0.27 m³,,Concrete Beam,0.09 m³
+Level 4,B7 - 200x600 mm.,1,0.20 m,0.60 m,5.00 m,5.20 m,6.84 m²,0.56 m³,,Concrete Beam,0.17 m³
+Level 4,B8 - 200x600 mm.,1,0.20 m,0.60 m,5.35 m,5.35 m,7.26 m²,0.62 m³,,Concrete Beam,0.17 m³
+Level 4,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 4,BL2C - 250x600 mm.,2,0.25 m,0.60 m,3.40 m,3.40 m,4.93 m²,0.51 m³,,Concrete Beam,0.14 m³
+Level 4,BST2 - 500x250 mm.,1,0.50 m,0.25 m,2.90 m,3.10 m,2.17 m²,0.15 m³,,Concrete Beam,0.16 m³
+Level 4,BX1 - 250x450 mm.,2,0.25 m,0.45 m,4.40 m,4.65 m,3.43 m²,0.27 m³,,Concrete Beam,0.18 m³
+Level 4,BX1C - 250x450 mm.,4,0.25 m,0.45 m,4.13 m,4.38 m,3.34 m²,0.27 m³,,Concrete Beam,0.19 m³
+Level 4,BX2 - 250x500 mm.,1,0.25 m,0.50 m,4.50 m,4.75 m,3.56 m²,0.28 m³,,Concrete Beam,0.17 m³
+Level 4,BX2C - 250x500 mm.,2,0.25 m,0.50 m,1.30 m,1.30 m,1.18 m²,0.11 m³,,Concrete Beam,0.07 m³
+Level 4: 20,,20,,,44.24 m,47.09 m,53.41 m²,4.37 m³,,,1.77 m³
+Level 5,B4C - 200x600 mm.,1,0.20 m,0.60 m,1.30 m,1.30 m,1.82 m²,0.16 m³,,Concrete Beam,0.05 m³
+Level 5,B5 - 200x600 mm.,1,0.20 m,0.60 m,7.05 m,8.25 m,11.55 m²,0.85 m³,,Concrete Beam,0.26 m³
+Level 5,B6C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.45 m,3.92 m²,0.27 m³,,Concrete Beam,0.09 m³
+Level 5,B7 - 200x600 mm.,1,0.20 m,0.60 m,5.00 m,5.20 m,6.84 m²,0.56 m³,,Concrete Beam,0.17 m³
+Level 5,B8 - 200x600 mm.,1,0.20 m,0.60 m,5.35 m,5.35 m,7.26 m²,0.62 m³,,Concrete Beam,0.17 m³
+Level 5,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 5,BL2C - 250x600 mm.,2,0.25 m,0.60 m,3.40 m,3.40 m,4.93 m²,0.51 m³,,Concrete Beam,0.14 m³
+Level 5,BST2 - 500x250 mm.,1,0.50 m,0.25 m,2.90 m,3.10 m,2.17 m²,0.15 m³,,Concrete Beam,0.16 m³
+Level 5,BX1 - 250x450 mm.,2,0.25 m,0.45 m,4.40 m,4.65 m,3.43 m²,0.27 m³,,Concrete Beam,0.18 m³
+Level 5,BX1C - 250x450 mm.,4,0.25 m,0.45 m,4.13 m,4.38 m,3.34 m²,0.27 m³,,Concrete Beam,0.19 m³
+Level 5,BX2 - 250x500 mm.,1,0.25 m,0.50 m,4.50 m,4.75 m,3.56 m²,0.28 m³,,Concrete Beam,0.17 m³
+Level 5,BX2C - 250x500 mm.,2,0.25 m,0.50 m,1.30 m,1.30 m,1.18 m²,0.11 m³,,Concrete Beam,0.07 m³
+Level 5: 20,,20,,,44.24 m,47.09 m,53.41 m²,4.37 m³,,,1.77 m³
+Level 6,B4C - 200x600 mm.,1,0.20 m,0.60 m,1.30 m,1.30 m,1.82 m²,0.16 m³,,Concrete Beam,0.05 m³
+Level 6,B5 - 200x600 mm.,1,0.20 m,0.60 m,7.05 m,8.25 m,11.55 m²,0.85 m³,,Concrete Beam,0.26 m³
+Level 6,B6C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.45 m,3.92 m²,0.27 m³,,Concrete Beam,0.09 m³
+Level 6,B7 - 200x600 mm.,1,0.20 m,0.60 m,5.00 m,5.20 m,6.84 m²,0.56 m³,,Concrete Beam,0.17 m³
+Level 6,B8 - 200x600 mm.,1,0.20 m,0.60 m,5.35 m,5.35 m,7.26 m²,0.62 m³,,Concrete Beam,0.17 m³
+Level 6,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 6,BL2C - 250x600 mm.,2,0.25 m,0.60 m,3.40 m,3.40 m,4.93 m²,0.51 m³,,Concrete Beam,0.14 m³
+Level 6,BST2 - 500x250 mm.,1,0.50 m,0.25 m,2.90 m,3.10 m,2.17 m²,0.15 m³,,Concrete Beam,0.16 m³
+Level 6,BX1 - 250x450 mm.,2,0.25 m,0.45 m,4.40 m,4.65 m,3.43 m²,0.27 m³,,Concrete Beam,0.18 m³
+Level 6,BX1C - 250x450 mm.,4,0.25 m,0.45 m,4.13 m,4.38 m,3.34 m²,0.27 m³,,Concrete Beam,0.19 m³
+Level 6,BX2 - 250x500 mm.,1,0.25 m,0.50 m,4.50 m,4.75 m,3.56 m²,0.28 m³,,Concrete Beam,0.17 m³
+Level 6,BX2C - 250x500 mm.,2,0.25 m,0.50 m,1.30 m,1.30 m,1.18 m²,0.11 m³,,Concrete Beam,0.07 m³
+Level 6: 20,,20,,,44.24 m,47.09 m,53.41 m²,4.37 m³,,,1.77 m³
+Level 7,B4C - 200x600 mm.,1,0.20 m,0.60 m,1.30 m,1.30 m,1.82 m²,0.16 m³,,Concrete Beam,0.05 m³
+Level 7,B5 - 200x600 mm.,1,0.20 m,0.60 m,7.05 m,8.25 m,11.55 m²,0.85 m³,,Concrete Beam,0.26 m³
+Level 7,B6C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.45 m,3.92 m²,0.27 m³,,Concrete Beam,0.09 m³
+Level 7,B7 - 200x600 mm.,1,0.20 m,0.60 m,5.00 m,5.20 m,6.84 m²,0.56 m³,,Concrete Beam,0.17 m³
+Level 7,B8 - 200x600 mm.,1,0.20 m,0.60 m,5.35 m,5.35 m,7.26 m²,0.62 m³,,Concrete Beam,0.17 m³
+Level 7,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 7,BL2C - 250x600 mm.,2,0.25 m,0.60 m,3.40 m,3.40 m,4.93 m²,0.51 m³,,Concrete Beam,0.14 m³
+Level 7,BST2 - 500x250 mm.,1,0.50 m,0.25 m,2.90 m,3.10 m,2.17 m²,0.15 m³,,Concrete Beam,0.16 m³
+Level 7,BX1 - 250x450 mm.,2,0.25 m,0.45 m,4.40 m,4.65 m,3.43 m²,0.27 m³,,Concrete Beam,0.18 m³
+Level 7,BX1C - 250x450 mm.,4,0.25 m,0.45 m,4.13 m,4.38 m,3.34 m²,0.27 m³,,Concrete Beam,0.19 m³
+Level 7,BX2 - 250x500 mm.,1,0.25 m,0.50 m,4.50 m,4.75 m,3.56 m²,0.28 m³,,Concrete Beam,0.17 m³
+Level 7,BX2C - 250x500 mm.,2,0.25 m,0.50 m,1.30 m,1.30 m,1.18 m²,0.11 m³,,Concrete Beam,0.07 m³
+Level 7: 20,,20,,,44.24 m,47.09 m,53.41 m²,4.37 m³,,,1.77 m³
+Level 8,B5 - 200x600 mm.,1,0.20 m,0.60 m,7.05 m,8.25 m,11.55 m²,0.85 m³,,Concrete Beam,0.26 m³
+Level 8,B6C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.45 m,4.66 m²,0.33 m³,,Concrete Beam,0.09 m³
+Level 8,B7 - 200x600 mm.,1,0.20 m,0.60 m,5.00 m,5.20 m,6.84 m²,0.56 m³,,Concrete Beam,0.17 m³
+Level 8,B8 - 200x600 mm.,1,0.20 m,0.60 m,5.35 m,5.35 m,7.28 m²,0.62 m³,,Concrete Beam,0.17 m³
+Level 8,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 8,BL2A - 250x500 mm.,1,0.25 m,0.50 m,5.40 m,5.65 m,4.24 m²,0.34 m³,,Concrete Beam,0.20 m³
+Level 8,BL2AC - 250x750 mm.,1,0.25 m,0.75 m,2.95 m,2.83 m,4.94 m²,0.55 m³,,Concrete Beam,0.10 m³
+Level 8,BL2BC - 250x500 mm.,1,0.25 m,0.50 m,1.05 m,1.05 m,1.00 m²,0.09 m³,,Concrete Beam,0.05 m³
+Level 8,BL2C - 250x600 mm.,1,0.25 m,0.60 m,1.50 m,1.63 m,2.36 m²,0.23 m³,,Concrete Beam,0.07 m³
+Level 8,BST2 - 500x250 mm.,1,0.50 m,0.25 m,2.90 m,3.10 m,2.17 m²,0.15 m³,,Concrete Beam,0.16 m³
+Level 8,BX1 - 250x450 mm.,1,0.25 m,0.45 m,2.25 m,2.25 m,1.86 m²,0.16 m³,,Concrete Beam,0.09 m³
+Level 8,BX1C - 250x450 mm.,2,0.25 m,0.45 m,2.03 m,2.28 m,1.98 m²,0.16 m³,,Concrete Beam,0.10 m³
+Level 8,BX2 - 250x500 mm.,1,0.25 m,0.50 m,4.50 m,4.75 m,3.56 m²,0.28 m³,,Concrete Beam,0.17 m³
+Level 8,BX2C - 250x500 mm.,2,0.25 m,0.50 m,1.30 m,1.30 m,1.18 m²,0.11 m³,,Concrete Beam,0.07 m³
+Level 8: 18,,18,,,46.19 m,49.04 m,57.03 m²,4.76 m³,,,1.81 m³
+Level 9,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,3.41 m²,0.33 m³,,Concrete Beam,0.14 m³
+Level 9,BL2C - 250x600 mm.,2,0.25 m,0.60 m,3.40 m,3.40 m,4.93 m²,0.51 m³,,Concrete Beam,0.14 m³
+Level 9,BR2C - 300x800 mm.,2,0.30 m,0.80 m,5.20 m,5.00 m,7.00 m²,0.86 m³,,Concrete Beam,0.20 m³
+Level 9,BR3 - 200x600 mm.,2,0.20 m,0.60 m,9.58 m,10.40 m,9.36 m²,0.67 m³,,Concrete Beam,0.34 m³
+Level 9,BR3A - 200x600 mm.,1,0.20 m,0.60 m,4.69 m,5.20 m,4.68 m²,0.33 m³,,Concrete Beam,0.17 m³
+Level 9: 10,,10,,,25.83 m,26.97 m,29.39 m²,2.70 m³,,,0.98 m³
+ระดับหลังคาห้องปั๊มน้ำ,BL1 - 250x450 mm.,3,0.25 m,0.45 m,2.97 m,2.97 m,2.42 m²,0.21 m³,,Concrete Beam,0.14 m³
+ระดับหลังคาห้องปั๊มน้ำ,BL1R - 250x450 mm.,2,0.25 m,0.45 m,3.95 m,4.50 m,3.60 m²,0.27 m³,,Concrete Beam,0.17 m³
+ระดับหลังคาห้องปั๊มน้ำ,BL3C - 250x500 mm.,2,0.25 m,0.50 m,3.40 m,3.40 m,3.23 m²,0.30 m³,,Concrete Beam,0.14 m³
+ระดับหลังคาห้องปั๊มน้ำ,BR1 - 200x500 mm.,4,0.20 m,0.50 m,18.87 m,19.45 m,17.51 m²,1.32 m³,,Concrete Beam,0.63 m³
+ระดับหลังคาห้องปั๊มน้ำ: 11,,11,,,29.19 m,30.32 m,26.76 m²,2.10 m³,,,1.08 m³
+Grand total: 177,,177,,,411.24 m,435.23 m,493.56 m²,42.01 m³,,,16.18 m³

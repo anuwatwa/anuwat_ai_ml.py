@@ -1,0 +1,53 @@
+﻿4.1 RC Floor ปริมาณพื้นคอนกรีตเสริมเหล็ก,,,,,,,,,,,
+Level,Type,Default Thickness,Perimeter,Area,Formwork (Side),Formwork (ALL),Volume,Count,Structural Material,Description
+,,,,,,,,,,
+Foundation,Geotextile+กรวด,0.10 m,11.01 m,6.85 m²,1.10 m²,7.95 m²,0.68 m³,1,งาน Geotextile+กรวด,280 ksc
+Foundation,RC - 150 mm. Thk.,0.15 m,60.40 m,83.45 m²,9.06 m²,92.51 m²,12.52 m³,2,Concrete RC Slab,320 ksc
+Foundation,RC - 250 mm. Thk.,0.30 m,27.99 m,36.72 m²,8.40 m²,45.12 m²,11.02 m³,1,Concrete RC Slab,
+Foundation,RC - 400 mm. Thk.,0.40 m,26.39 m,39.54 m²,10.56 m²,50.09 m²,15.81 m³,1,Concrete RC Slab,
+Foundation,งานขุดดิน,6.00 m,102.20 m,449.28 m²,613.21 m²,1062.49 m²,2695.66 m³,1,งานขุดดิน,280 ksc
+Foundation,งานขุดดิน (บ่อ methane),2.35 m,19.01 m,21.85 m²,44.66 m²,66.52 m²,47.52 m³,1,งานขุดดิน,280 ksc
+Foundation,งานขุดดิน (บ่อดักไขมัน),1.80 m,16.00 m,15.99 m²,28.79 m²,44.79 m²,28.79 m³,1,งานขุดดิน,280 ksc
+Foundation,งานถมทรายรอบบ่อ,2.95 m,36.00 m,68.75 m²,106.20 m²,174.95 m²,202.80 m³,1,งานถมทราย,280 ksc
+Foundation,งานถมทรายรอบบ่อ (บ่อหน่วงน้ำ),5.75 m,34.40 m,69.94 m²,197.77 m²,267.71 m²,402.14 m³,1,งานถมทราย,280 ksc
+10,,,333.39 m,792.36 m²,1019.76 m²,1812.12 m²,3416.94 m³,,,
++0.00 Road,งานถมทรายรอบบ่อ (บ่อกำจัด Methane),2.75 m,60.39 m,135.83 m²,166.08 m²,301.91 m²,373.53 m³,1,งานถมทราย,280 ksc
+1,,,60.39 m,135.83 m²,166.08 m²,301.91 m²,373.53 m³,,,
+Level 1,FS - 250 mm. Thk. LL=200, SDL=500,0.25 m,206.41 m,785.44 m²,51.60 m²,837.04 m²,196.36 m³,2,Concrete Flat Slab,
+Level 1,FS - 250 mm. Thk. LL=400, SDL=0,0.25 m,34.44 m,18.20 m²,8.61 m²,26.81 m²,4.55 m³,4,Concrete Flat Slab,
+Level 1,FS - 250 mm. Thk. LL=400, SDL=120,0.25 m,19.40 m,18.00 m²,4.85 m²,22.85 m²,4.50 m³,1,Concrete Flat Slab,
+Level 1,FS - 250 mm. Thk. LL=500, SDL=100,0.25 m,14.06 m,11.49 m²,3.51 m²,15.01 m²,2.87 m³,1,Concrete Flat Slab,
+Level 1,FS - 250 mm. Thk. LL=1000, SDL=120,0.25 m,18.05 m,19.22 m²,4.51 m²,23.74 m²,4.81 m³,1,Concrete Flat Slab,
+Level 1,S2150 - 150 mm. Thk.,0.15 m,28.51 m,18.23 m²,4.28 m²,22.50 m²,2.73 m³,3,Concrete RC Slab,280 ksc
+Level 1,SL1175 - 175 mm. Thk.,0.18 m,17.49 m,16.87 m²,3.06 m²,19.93 m²,2.95 m³,1,Concrete RC Slab,280 ksc
+13,,,338.36 m,887.45 m²,80.43 m²,967.87 m²,218.77 m³,,,
+Level 2,PS.1 - 250 mm. Thk. (Pour Strip),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+Level 2,RC - 100 mm. Thk.,0.10 m,3.41 m,0.66 m²,0.34 m²,1.00 m²,0.07 m³,1,Concrete RC Slab,
+2,,,29.01 m,19.53 m²,6.74 m²,26.27 m²,4.78 m³,,,
+Level 3,PS.1 - 250 mm. Thk. (Pour Strip),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+Level 3,S2150 - 150 mm. Thk.,0.15 m,9.60 m,5.12 m²,1.44 m²,6.56 m²,0.77 m³,1,Concrete RC Slab,280 ksc
+Level 3,SR1125 - 125 mm. Thk.,0.13 m,11.40 m,7.02 m²,1.43 m²,8.45 m²,0.88 m³,1,Concrete RC Slab,280 ksc
+3,,,46.60 m,31.01 m²,9.27 m²,40.28 m²,6.36 m³,,,
+Level 4,PS.1 - 250 mm. Thk. (Pour Strip),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+Level 4,S2150 - 150 mm. Thk.,0.15 m,9.60 m,5.12 m²,1.44 m²,6.56 m²,0.77 m³,1,Concrete RC Slab,280 ksc
+2,,,35.20 m,23.99 m²,7.84 m²,31.83 m²,5.49 m³,,,
+Level 5,PS.1 - 250 mm. Thk. (Pour Strip),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+Level 5,S2150 - 150 mm. Thk.,0.15 m,9.60 m,5.12 m²,1.44 m²,6.56 m²,0.77 m³,1,Concrete RC Slab,280 ksc
+2,,,35.20 m,23.99 m²,7.84 m²,31.83 m²,5.49 m³,,,
+Level 6,PS.1 - 250 mm. Thk. (Pour Strip),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+Level 6,S2150 - 150 mm. Thk.,0.15 m,9.60 m,5.12 m²,1.44 m²,6.56 m²,0.77 m³,1,Concrete RC Slab,280 ksc
+2,,,35.20 m,23.99 m²,7.84 m²,31.83 m²,5.49 m³,,,
+Level 7,PS.1 - 250 mm. Thk. (Pour Strip),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+Level 7,S2150 - 150 mm. Thk.,0.15 m,9.60 m,5.12 m²,1.44 m²,6.56 m²,0.77 m³,1,Concrete RC Slab,280 ksc
+2,,,35.20 m,23.99 m²,7.84 m²,31.83 m²,5.49 m³,,,
+Level 8,PS.1 - 250 mm. Thk. (Pour Strip),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+Level 8,S2150 - 150 mm. Thk.,0.15 m,9.20 m,4.48 m²,1.38 m²,5.86 m²,0.67 m³,1,Concrete RC Slab,280 ksc
+Level 8,ปูนทราบปรับระดับ - 250 mm. Thk.,0.25 m,16.40 m,8.00 m²,4.10 m²,12.10 m²,2.00 m³,2,Concrete RC Slab,
+4,,,51.20 m,31.36 m²,11.88 m²,43.24 m²,7.39 m³,,,
+Level 9,PS.1 - 250 mm. Thk. (Pour Strip) (W),0.25 m,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,1,Concrete Flat Slab,280 ksc
+1,,,25.60 m,18.87 m²,6.40 m²,25.27 m²,4.72 m³,,,
+ระดับหลังคาห้องปั๊มน้ำ,SL1175 - 175 mm. Thk.,0.18 m,15.00 m,12.50 m²,2.63 m²,15.13 m²,2.19 m³,1,Concrete RC Slab,280 ksc
+ระดับหลังคาห้องปั๊มน้ำ,SR2150 - 150 mm. Thk. (W),0.15 m,20.60 m,26.40 m²,3.09 m²,29.49 m²,3.96 m³,1,Concrete RC Slab,280 ksc
+ระดับหลังคาห้องปั๊มน้ำ,SR3150 - 150 mm. Thk. (W),0.15 m,19.60 m,23.01 m²,2.94 m²,25.95 m²,3.45 m³,1,Concrete RC Slab,280 ksc
+3,,,55.20 m,61.91 m²,8.66 m²,70.57 m²,9.60 m³,,,
+45,,,1080.55 m,2074.29 m²,1340.57 m²,3414.86 m²,4064.05 m³,,,

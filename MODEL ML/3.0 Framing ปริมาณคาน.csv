@@ -1,0 +1,35 @@
+﻿3.0 Framing ปริมาณคาน,,,,,,,,,,
+Type,Count,B,H,Cut Length,Length,Formwork,Volume,Description,Structural Material
+,,,,,,,,,
+B1 - 200x600 mm.,1,0.20 m,0.60 m,7.02 m,8.25 m,11.55 m²,0.84 m³,,Concrete Beam
+B2C - 200x850 mm.,1,0.20 m,0.85 m,1.95 m,2.55 m,4.85 m²,0.33 m³,,Concrete Beam
+B3 - 200x450 mm.,9,0.20 m,0.45 m,27.84 m,28.70 m,28.71 m²,2.24 m³,,Concrete Beam
+B4C - 200x600 mm.,6,0.20 m,0.60 m,7.79 m,7.80 m,10.92 m²,0.94 m³,,Concrete Beam
+B5 - 200x600 mm.,6,0.20 m,0.60 m,42.29 m,49.50 m,69.30 m²,5.07 m³,,Concrete Beam
+B6C - 200x850 mm.,6,0.20 m,0.85 m,11.70 m,14.70 m,24.26 m²,1.70 m³,,Concrete Beam
+B7 - 200x600 mm.,6,0.20 m,0.60 m,30.00 m,31.20 m,41.06 m²,3.35 m³,,Concrete Beam
+B8 - 200x600 mm.,5,0.20 m,0.60 m,26.75 m,26.75 m,36.31 m²,3.10 m³,,Concrete Beam
+BF1 - 200x450 mm.,2,0.20 m,0.45 m,2.90 m,3.20 m,3.52 m²,0.26 m³,,Concrete Beam
+BF2 - 300x700 mm.,2,0.30 m,0.70 m,11.20 m,11.65 m,19.81 m²,2.35 m³,,Concrete Beam
+BF3 - 300x700 mm.,1,0.30 m,0.70 m,4.78 m,5.07 m,8.62 m²,1.00 m³,,Concrete Beam
+BF4 - 300x700 mm.,1,0.30 m,0.70 m,4.85 m,5.14 m,8.74 m²,1.02 m³,,Concrete Beam
+BF5 - 275x550 mm.,1,0.28 m,0.55 m,6.63 m,6.48 m,8.90 m²,1.00 m³,,Concrete Beam
+BL1 - 250x450 mm.,27,0.25 m,0.45 m,26.69 m,26.69 m,29.71 m²,2.88 m³,,Concrete Beam
+BL1R - 250x450 mm.,2,0.25 m,0.45 m,3.95 m,4.50 m,3.60 m²,0.27 m³,,Concrete Beam
+BL2A - 250x500 mm.,1,0.25 m,0.50 m,5.40 m,5.65 m,4.24 m²,0.34 m³,,Concrete Beam
+BL2AC - 250x750 mm.,1,0.25 m,0.75 m,2.95 m,2.83 m,4.94 m²,0.55 m³,,Concrete Beam
+BL2BC - 250x500 mm.,1,0.25 m,0.50 m,1.05 m,1.05 m,1.00 m²,0.09 m³,,Concrete Beam
+BL2C - 250x600 mm.,15,0.25 m,0.60 m,25.32 m,25.45 m,36.90 m²,3.80 m³,,Concrete Beam
+BL3C - 250x500 mm.,2,0.25 m,0.50 m,3.40 m,3.40 m,3.23 m²,0.30 m³,,Concrete Beam
+BR1 - 200x500 mm.,4,0.20 m,0.50 m,18.87 m,19.45 m,17.51 m²,1.32 m³,,Concrete Beam
+BR2C - 300x800 mm.,2,0.30 m,0.80 m,5.20 m,5.00 m,7.00 m²,0.86 m³,,Concrete Beam
+BR3 - 200x600 mm.,2,0.20 m,0.60 m,9.58 m,10.40 m,9.36 m²,0.67 m³,,Concrete Beam
+BR3A - 200x600 mm.,1,0.20 m,0.60 m,4.69 m,5.20 m,4.68 m²,0.33 m³,,Concrete Beam
+BST2 - 500x250 mm.,6,0.50 m,0.25 m,17.40 m,18.60 m,13.02 m²,0.87 m³,,Concrete Beam
+BX1 - 250x450 mm.,13,0.25 m,0.45 m,28.65 m,30.15 m,22.42 m²,1.79 m³,,Concrete Beam
+BX1C - 250x450 mm.,26,0.25 m,0.45 m,26.81 m,28.56 m,22.03 m²,1.77 m³,,Concrete Beam
+BX2 - 250x500 mm.,7,0.25 m,0.50 m,31.47 m,33.22 m,24.91 m²,1.97 m³,,Concrete Beam
+BX2C - 250x500 mm.,14,0.25 m,0.50 m,9.10 m,9.10 m,8.23 m²,0.74 m³,,Concrete Beam
+BZ1 - 150x400 mm.,2,0.15 m,0.40 m,0.60 m,0.90 m,0.77 m²,0.03 m³,,Concrete Beam
+BZ1C - 150x400 mm.,4,0.15 m,0.40 m,4.41 m,4.09 m,3.48 m²,0.23 m³,,Concrete Beam
+Grand total: 177,177,,,411.24 m,435.23 m,493.56 m²,42.01 m³,,
