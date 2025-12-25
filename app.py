@@ -206,19 +206,16 @@ def main():
     st.markdown("## 📋 รายการที่เพิ่มแล้ว")
     
     if st.session_state.items:
-        # แสดงเป็นตาราง
-        df_items = pd.DataFrame(st.session_state.items)
-        
-        # เพิ่มคอลัมน์ลบ
-        for i, row in df_items.iterrows():
+        # แสดงรายการโดยไม่ใช้ DataFrame
+        for i, item in enumerate(st.session_state.items):
             col1, col2, col3 = st.columns([1, 4, 1])
             
             with col1:
                 st.write(f"**{i+1}.**")
             
             with col2:
-                st.write(f"**{row['type']}:** {row['description']}")
-                st.caption(f"Vol: {row['volume']:.2f}m³ | Form: {row['formwork']:.2f}m² | Steel: {row['steel']:.2f}kg")
+                st.write(f"**{item['type']}:** {item['description']}")
+                st.caption(f"Vol: {item['volume']:.2f}m³ | Form: {item['formwork']:.2f}m² | Steel: {item['steel']:.2f}kg")
             
             with col3:
                 if st.button("🗑️", key=f"del_{i}"):
