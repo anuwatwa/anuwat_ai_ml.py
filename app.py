@@ -19,12 +19,6 @@ st.set_page_config(
 )
 
 # ===================================
-# Initialize Session State
-# ===================================
-if 'items' not in st.session_state:
-    st.session_state.items = []
-
-# ===================================
 # Calculation Functions
 # ===================================
 def calculate_foundation(width, length, height, count):
@@ -77,6 +71,10 @@ def calculate_beam(width, height, length, count):
 # Main App
 # ===================================
 def main():
+    # Initialize session state
+    if 'items' not in st.session_state:
+        st.session_state.items = []
+    
     # Header
     st.markdown("# 🏗️ ประมาณการปริมาณงานก่อสร้าง (แบบคร่าวๆ)")
     st.markdown("### ระบบประเมินอย่างง่ายสำหรับงานโครงสร้าง")
@@ -107,13 +105,14 @@ def main():
         
         if st.button("➕ เพิ่มฐานราก", type="primary", key="add_f"):
             result = calculate_foundation(f_width, f_length, f_height, f_count)
-            st.session_state.items.append({
+            new_item = {
                 'type': 'Foundation',
                 'description': f'{f_width}×{f_length}×{f_height}m ({f_count} ฐาน)',
                 'volume': result['volume'],
                 'formwork': result['formwork'],
                 'steel': result['steel']
-            })
+            }
+            st.session_state.items.append(new_item)
             st.success(f"✅ เพิ่มฐานราก {f_count} ฐาน")
             st.rerun()
     
@@ -135,13 +134,14 @@ def main():
         
         if st.button("➕ เพิ่มเสา", type="primary", key="add_c"):
             result = calculate_column(c_width, 3.0, c_count)
-            st.session_state.items.append({
+            new_item = {
                 'type': 'Column',
                 'description': f'{c_width*100:.0f}×{c_width*100:.0f}cm H=3m ({c_count} ต้น)',
                 'volume': result['volume'],
                 'formwork': result['formwork'],
                 'steel': result['steel']
-            })
+            }
+            st.session_state.items.append(new_item)
             st.success(f"✅ เพิ่มเสา {c_count} ต้น")
             st.rerun()
     
@@ -161,13 +161,14 @@ def main():
         
         if st.button("➕ เพิ่มพื้น", type="primary", key="add_s"):
             result = calculate_slab(s_area, s_thickness, s_type, s_count)
-            st.session_state.items.append({
+            new_item = {
                 'type': 'Slab',
                 'description': f'{s_type}: {s_area}m² หนา {s_thickness}m ({s_count} ชั้น)',
                 'volume': result['volume'],
                 'formwork': result['formwork'],
                 'steel': result['steel']
-            })
+            }
+            st.session_state.items.append(new_item)
             st.success(f"✅ เพิ่มพื้น {s_count} ชั้น")
             st.rerun()
     
@@ -189,13 +190,14 @@ def main():
         
         if st.button("➕ เพิ่มคาน", type="primary", key="add_b"):
             result = calculate_beam(b_width, b_height, b_length, b_count)
-            st.session_state.items.append({
+            new_item = {
                 'type': 'Beam',
                 'description': f'{b_width*100:.0f}×{b_height*100:.0f}cm L={b_length}m ({b_count} เส้น)',
                 'volume': result['volume'],
                 'formwork': result['formwork'],
                 'steel': result['steel']
-            })
+            }
+            st.session_state.items.append(new_item)
             st.success(f"✅ เพิ่มคาน {b_count} เส้น")
             st.rerun()
     
@@ -205,8 +207,8 @@ def main():
     st.markdown("---")
     st.markdown("## 📋 รายการที่เพิ่มแล้ว")
     
-    if st.session_state.items:
-        # แสดงรายการโดยไม่ใช้ DataFrame
+    if len(st.session_state.items) > 0:
+        # แสดงรายการ
         for i, item in enumerate(st.session_state.items):
             col1, col2, col3 = st.columns([1, 4, 1])
             
@@ -236,7 +238,7 @@ def main():
     # ===================================
     # SUMMARY / TOTAL
     # ===================================
-    if st.session_state.items:
+    if len(st.session_state.items) > 0:
         st.markdown("---")
         st.markdown("## 📊 สรุปผลรวม")
         
@@ -297,8 +299,9 @@ def main():
                 'เหล็ก (kg)': f"{values['steel']:.2f}"
             })
         
-        df_summary = pd.DataFrame(summary_data)
-        st.dataframe(df_summary, use_container_width=True, hide_index=True)
+        if summary_data:
+            df_summary = pd.DataFrame(summary_data)
+            st.dataframe(df_summary, use_container_width=True, hide_index=True)
         
         # ประมาณการค่าใช้จ่าย (คร่าวๆ)
         st.markdown("### 💰 ประมาณการค่าใช้จ่าย (คร่าวๆ)")
