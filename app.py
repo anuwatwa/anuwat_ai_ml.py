@@ -1,498 +1,344 @@
 """
-Streamlit UI - Construction Quantity Estimation
-โปรแกรมประมาณการปริมาณงานก่อสร้าง
+Streamlit UI - Construction Quantity Estimation (Simplified Version)
+โปรแกรมประมาณการปริมาณงานก่อสร้างแบบคร่าวๆ
 
 ติดตั้ง: pip install streamlit
-รัน: streamlit run app.py
+รัน: streamlit run app_simple.py
 """
 
 import streamlit as st
-import pickle
 import pandas as pd
-import os
 
 # ===================================
 # Configuration
 # ===================================
 st.set_page_config(
-    page_title="Construction Estimation",
+    page_title="Construction Estimation - Simple",
     page_icon="🏗️",
     layout="wide"
 )
 
 # ===================================
-# Load Model Function
-# ===================================
-def load_model(model_file):
-    """โหลดโมเดล - ลองหาในหลาย path"""
-    paths = [
-        f"models/{model_file}",
-        model_file,
-        f"../{model_file}",
-        f"../../{model_file}"
-    ]
-    
-    for path in paths:
-        if os.path.exists(path):
-            try:
-                with open(path, 'rb') as f:
-                    data = pickle.load(f)
-                return data['model'], data['scaler'], data['feature_names']
-            except Exception as e:
-                continue
-    
-    return None, None, None
-
-def predict(model, scaler, features, input_data):
-    """ทำนายจากโมเดล"""
-    try:
-        X = pd.DataFrame([input_data])[features]
-        from sklearn.linear_model import LinearRegression
-        if isinstance(model, LinearRegression):
-            X = scaler.transform(X)
-        return model.predict(X)[0]
-    except Exception as e:
-        st.error(f"Error: {e}")
-        return None
-
-# ===================================
 # Initialize Session State
 # ===================================
-if 'foundation_items' not in st.session_state:
-    st.session_state.foundation_items = []
-if 'column_items' not in st.session_state:
-    st.session_state.column_items = []
-if 'slab_items' not in st.session_state:
-    st.session_state.slab_items = []
-if 'beam_items' not in st.session_state:
-    st.session_state.beam_items = []
+if 'items' not in st.session_state:
+    st.session_state.items = []
+
+# ===================================
+# Calculation Functions
+# ===================================
+def calculate_foundation(width, length, height, count):
+    """คำนวณฐานราก"""
+    volume = width * length * height * count
+    formwork = 2 * (width + length) * height * count
+    steel = volume * 80  # kg/m³
+    return {
+        'volume': volume,
+        'formwork': formwork,
+        'steel': steel
+    }
+
+def calculate_column(width, height, count):
+    """คำนวณเสา (กำหนดความสูง 3m)"""
+    column_height = 3.0  # ความสูงมาตรฐาน
+    volume = width * width * column_height * count
+    formwork = 4 * width * column_height * count
+    steel = volume * 120  # kg/m³
+    return {
+        'volume': volume,
+        'formwork': formwork,
+        'steel': steel
+    }
+
+def calculate_slab(area, thickness, slab_type, count):
+    """คำนวณพื้น"""
+    volume = area * thickness * count
+    formwork = area * count  # พื้นล่าง
+    steel_rate = 90 if slab_type == "RC Slab" else 60
+    steel = volume * steel_rate
+    return {
+        'volume': volume,
+        'formwork': formwork,
+        'steel': steel
+    }
+
+def calculate_beam(width, height, length, count):
+    """คำนวณคาน"""
+    volume = width * height * length * count
+    formwork = 2 * (width + height) * length * count
+    steel = volume * 110  # kg/m³
+    return {
+        'volume': volume,
+        'formwork': formwork,
+        'steel': steel
+    }
 
 # ===================================
 # Main App
 # ===================================
 def main():
     # Header
-    st.markdown("# 🏗️ Construction Quantity Estimation")
-    st.markdown("### ระบบประมาณการปริมาณงานก่อสร้าง")
+    st.markdown("# 🏗️ ประมาณการปริมาณงานก่อสร้าง (แบบคร่าวๆ)")
+    st.markdown("### ระบบประเมินอย่างง่ายสำหรับงานโครงสร้าง")
     
-    # ขอบเขตงาน
-    with st.expander("📋 ขอบเขตของงาน - คลิกเพื่ออ่าน", expanded=False):
+    # คำอธิบาย
+    st.info("💡 **วิธีใช้งาน:** เลือกประเภทงาน → กรอกขนาดหลักๆ → เพิ่มรายการ → ดูผลรวมด้านล่าง")
+    
+    st.markdown("---")
+    
+    # ===================================
+    # Input Section - ใช้ Tabs เพื่อแยกประเภทงาน
+    # ===================================
+    tab1, tab2, tab3, tab4 = st.tabs(["🔲 ฐานราก", "🏛️ เสา", "⬜ พื้น", "➖ คาน"])
+    
+    # ==================== TAB 1: FOUNDATION ====================
+    with tab1:
+        st.markdown("### 🔲 ฐานราก (Foundation)")
+        
         col1, col2 = st.columns(2)
         
         with col1:
-            st.markdown("""
-            **1. Foundation (ฐานราก)**
-            - Input: Width, Length, Thickness, Area, Perimeter, Count
-            - Output: Volume, Formwork
-            - ความแม่นยำ: ~99%
-            
-            **2. Column (เสา)**
-            - Input: Width, Depth, Length, Perimeter, Area
-            - Output: Volume, Formwork, Steel
-            - ความแม่นยำ: ~83%
-            """)
+            f_width = st.number_input("กว้าง (m)", value=1.5, step=0.1, min_value=0.1, key="f_width")
+            f_length = st.number_input("ยาว (m)", value=1.5, step=0.1, min_value=0.1, key="f_length")
         
         with col2:
-            st.markdown("""
-            **3. Slab (พื้น)**
-            - Input: Type (RC/PT), Thickness, Perimeter, Area
-            - Output: Volume, Formwork (Side), Formwork (ALL), Steel
-            - ความแม่นยำ: ~80-98%
-            
-            **4. Beam (คาน)**
-            - Input: B, H, Length
-            - Output: Cut Length, Volume (Cut/Full), Formwork, Steel
-            - ความแม่นยำ: ~73-91%
-            """)
+            f_height = st.number_input("หนา (m)", value=0.8, step=0.1, min_value=0.1, key="f_height")
+            f_count = st.number_input("จำนวน (ฐาน)", value=1, step=1, min_value=1, key="f_count")
+        
+        if st.button("➕ เพิ่มฐานราก", type="primary", key="add_f"):
+            result = calculate_foundation(f_width, f_length, f_height, f_count)
+            st.session_state.items.append({
+                'type': 'Foundation',
+                'description': f'{f_width}×{f_length}×{f_height}m ({f_count} ฐาน)',
+                'volume': result['volume'],
+                'formwork': result['formwork'],
+                'steel': result['steel']
+            })
+            st.success(f"✅ เพิ่มฐานราก {f_count} ฐาน")
+            st.rerun()
     
-    st.markdown("---")
-    
-    # ===================================
-    # 1. FOUNDATION
-    # ===================================
-    st.markdown("## 1️⃣ Foundation (ฐานราก)")
-    
-    with st.form("foundation_form"):
-        col1, col2, col3 = st.columns(3)
+    # ==================== TAB 2: COLUMN ====================
+    with tab2:
+        st.markdown("### 🏛️ เสา (Column)")
+        st.caption("*กำหนดความสูงเสามาตรฐาน 3.0m*")
+        
+        col1, col2 = st.columns(2)
         
         with col1:
-            f_width = st.number_input("Width (m)", value=1.20, step=0.1, key="f_width")
-            f_length = st.number_input("Length (m)", value=1.20, step=0.1, key="f_length")
+            c_width = st.number_input("ขนาดเสา (m)", value=0.4, step=0.05, min_value=0.1, key="c_width", 
+                                     help="เสาสี่เหลี่ยมจตุรัส เช่น 0.4m = 40×40cm")
+        
         with col2:
-            f_thickness = st.number_input("Thickness (m)", value=0.80, step=0.1, key="f_thickness")
-            f_area = st.number_input("Area (m²)", value=1.44, step=0.1, key="f_area")
-        with col3:
-            f_perimeter = st.number_input("Perimeter (m)", value=4.8, step=0.1, key="f_perimeter")
-            f_count = st.number_input("จำนวน (Count)", value=1, step=1, min_value=1, key="f_count")
+            c_count = st.number_input("จำนวน (ต้น)", value=1, step=1, min_value=1, key="c_count")
         
-        submitted_f = st.form_submit_button("➕ เพิ่ม Foundation", type="primary")
+        st.info(f"📏 เสา {c_width*100:.0f}×{c_width*100:.0f}cm สูง 3m")
         
-        if submitted_f:
-            # คำนวณด้วยสูตร (ถ้าโมเดลไม่มี)
-            volume = f_width * f_length * f_thickness * f_count
-            formwork = (2 * (f_width + f_length) * f_thickness) * f_count
-            
-            # ลองใช้โมเดล
-            data = {
-                'Width': f_width,
-                'Length': f_length,
-                'Thickness': f_thickness,
-                'Area': f_area,
-                'Perimeter': f_perimeter,
-                'Count': f_count
-            }
-            
-            model_vol, scaler_vol, features_vol = load_model("foundation_volume_model.pkl")
-            model_form, scaler_form, features_form = load_model("foundation_formwork_model.pkl")
-            
-            if model_vol and model_form:
-                volume_ml = predict(model_vol, scaler_vol, features_vol, data)
-                formwork_ml = predict(model_form, scaler_form, features_form, data)
-                if volume_ml and formwork_ml:
-                    volume = volume_ml * f_count
-                    formwork = formwork_ml * f_count
-            
-            st.session_state.foundation_items.append({
-                'width': f_width,
-                'length': f_length,
-                'thickness': f_thickness,
-                'count': f_count,
-                'volume': volume,
-                'formwork': formwork
+        if st.button("➕ เพิ่มเสา", type="primary", key="add_c"):
+            result = calculate_column(c_width, 3.0, c_count)
+            st.session_state.items.append({
+                'type': 'Column',
+                'description': f'{c_width*100:.0f}×{c_width*100:.0f}cm H=3m ({c_count} ต้น)',
+                'volume': result['volume'],
+                'formwork': result['formwork'],
+                'steel': result['steel']
             })
-            st.success(f"✅ เพิ่ม Foundation จำนวน {f_count} รายการ")
+            st.success(f"✅ เพิ่มเสา {c_count} ต้น")
+            st.rerun()
     
-    # แสดงรายการ Foundation
-    if st.session_state.foundation_items:
-        st.markdown("### 📋 รายการ Foundation")
-        for i, item in enumerate(st.session_state.foundation_items):
-            col1, col2, col3 = st.columns([3, 1, 1])
-            with col1:
-                st.write(f"**รายการ {i+1}:** {item['width']}m × {item['length']}m × {item['thickness']}m × {item['count']} ชิ้น")
-            with col2:
-                st.write(f"Volume: {item['volume']:.2f} m³")
-            with col3:
-                if st.button("🗑️ ลบ", key=f"del_f_{i}"):
-                    st.session_state.foundation_items.pop(i)
-                    st.rerun()
-    
-    st.markdown("---")
-    
-    # ===================================
-    # 2. COLUMN
-    # ===================================
-    st.markdown("## 2️⃣ Column (เสา)")
-    
-    with st.form("column_form"):
-        col1, col2, col3 = st.columns(3)
+    # ==================== TAB 3: SLAB ====================
+    with tab3:
+        st.markdown("### ⬜ พื้น (Slab)")
+        
+        col1, col2 = st.columns(2)
         
         with col1:
-            c_width = st.number_input("Width (m)", value=1.2, step=0.1, key="c_width")
-            c_depth = st.number_input("Depth (m)", value=0.3, step=0.1, key="c_depth")
+            s_area = st.number_input("พื้นที่ (m²)", value=100.0, step=10.0, min_value=1.0, key="s_area")
+            s_thickness = st.number_input("หนา (m)", value=0.15, step=0.01, min_value=0.05, key="s_thickness")
+        
         with col2:
-            c_length = st.number_input("Length/Height (m)", value=2.8, step=0.1, key="c_length")
-            c_perimeter = st.number_input("Perimeter (m)", value=3.0, step=0.1, key="c_perimeter")
-        with col3:
-            c_area = st.number_input("Area Column (m²)", value=0.36, step=0.01, key="c_area")
-            c_count = st.number_input("จำนวน (Count)", value=1, step=1, min_value=1, key="c_count")
+            s_type = st.selectbox("ประเภท", ["RC Slab", "Post-Tension Slab"], key="s_type")
+            s_count = st.number_input("จำนวน (ชั้น)", value=1, step=1, min_value=1, key="s_count")
         
-        submitted_c = st.form_submit_button("➕ เพิ่ม Column", type="primary")
-        
-        if submitted_c:
-            # คำนวณด้วยสูตร
-            volume = c_width * c_depth * c_length * c_count
-            formwork = 2 * (c_width + c_depth) * c_length * c_count
-            steel = volume * 110
-            
-            # ลองใช้โมเดล
-            data = {
-                'Width': c_width,
-                'Depth': c_depth,
-                'Length': c_length,
-                'Perimeter': c_perimeter,
-                'Area Column': c_area
-            }
-            
-            model_vol, scaler_vol, features_vol = load_model("column_volume_model.pkl")
-            model_form, scaler_form, features_form = load_model("column_formwork_model.pkl")
-            
-            if model_vol and model_form:
-                volume_ml = predict(model_vol, scaler_vol, features_vol, data)
-                formwork_ml = predict(model_form, scaler_form, features_form, data)
-                if volume_ml and formwork_ml:
-                    volume = volume_ml * c_count
-                    formwork = formwork_ml * c_count
-                    steel = volume * 110
-            
-            st.session_state.column_items.append({
-                'width': c_width,
-                'depth': c_depth,
-                'length': c_length,
-                'count': c_count,
-                'volume': volume,
-                'formwork': formwork,
-                'steel': steel
+        if st.button("➕ เพิ่มพื้น", type="primary", key="add_s"):
+            result = calculate_slab(s_area, s_thickness, s_type, s_count)
+            st.session_state.items.append({
+                'type': 'Slab',
+                'description': f'{s_type}: {s_area}m² หนา {s_thickness}m ({s_count} ชั้น)',
+                'volume': result['volume'],
+                'formwork': result['formwork'],
+                'steel': result['steel']
             })
-            st.success(f"✅ เพิ่ม Column จำนวน {c_count} รายการ")
+            st.success(f"✅ เพิ่มพื้น {s_count} ชั้น")
+            st.rerun()
     
-    # แสดงรายการ Column
-    if st.session_state.column_items:
-        st.markdown("### 📋 รายการ Column")
-        for i, item in enumerate(st.session_state.column_items):
-            col1, col2, col3 = st.columns([3, 1, 1])
-            with col1:
-                st.write(f"**รายการ {i+1}:** {item['width']}m × {item['depth']}m × {item['length']}m × {item['count']} ต้น")
-            with col2:
-                st.write(f"Volume: {item['volume']:.2f} m³, Steel: {item['steel']:.2f} kg")
-            with col3:
-                if st.button("🗑️ ลบ", key=f"del_c_{i}"):
-                    st.session_state.column_items.pop(i)
-                    st.rerun()
-    
-    st.markdown("---")
-    
-    # ===================================
-    # 3. SLAB
-    # ===================================
-    st.markdown("## 3️⃣ Slab (พื้น)")
-    
-    with st.form("slab_form"):
-        col1, col2, col3 = st.columns(3)
+    # ==================== TAB 4: BEAM ====================
+    with tab4:
+        st.markdown("### ➖ คาน (Beam)")
+        
+        col1, col2 = st.columns(2)
         
         with col1:
-            s_type = st.selectbox("ประเภทพื้น", ["RC Slab", "Post-Tension Slab"], key="s_type")
-            s_thickness = st.number_input("Thickness (m)", value=0.15, step=0.01, key="s_thickness")
+            b_width = st.number_input("กว้าง (m)", value=0.25, step=0.05, min_value=0.1, key="b_width")
+            b_height = st.number_input("สูง (m)", value=0.6, step=0.05, min_value=0.1, key="b_height")
+        
         with col2:
-            s_perimeter = st.number_input("Perimeter (m)", value=60.0, step=1.0, key="s_perimeter")
-            s_area = st.number_input("Area (m²)", value=80.0, step=1.0, key="s_area")
-        with col3:
-            s_count = st.number_input("จำนวน (Count)", value=1, step=1, min_value=1, key="s_count")
+            b_length = st.number_input("ยาว (m)", value=6.0, step=0.5, min_value=0.5, key="b_length")
+            b_count = st.number_input("จำนวน (เส้น)", value=1, step=1, min_value=1, key="b_count")
         
-        submitted_s = st.form_submit_button("➕ เพิ่ม Slab", type="primary")
+        st.info(f"📏 คาน {b_width*100:.0f}×{b_height*100:.0f}cm ยาว {b_length}m")
         
-        if submitted_s:
-            s_type_code = 0 if s_type == "RC Slab" else 1
-            
-            # คำนวณด้วยสูตร
-            volume = s_area * s_thickness * s_count
-            formwork_side = s_perimeter * s_thickness * s_count
-            formwork_all = (formwork_side + s_area) * s_count
-            steel_per_m3 = 90 if s_type_code == 0 else 60
-            steel = volume * steel_per_m3
-            
-            st.session_state.slab_items.append({
-                'type': s_type,
-                'thickness': s_thickness,
-                'perimeter': s_perimeter,
-                'area': s_area,
-                'count': s_count,
-                'volume': volume,
-                'formwork_side': formwork_side,
-                'formwork_all': formwork_all,
-                'steel': steel
+        if st.button("➕ เพิ่มคาน", type="primary", key="add_b"):
+            result = calculate_beam(b_width, b_height, b_length, b_count)
+            st.session_state.items.append({
+                'type': 'Beam',
+                'description': f'{b_width*100:.0f}×{b_height*100:.0f}cm L={b_length}m ({b_count} เส้น)',
+                'volume': result['volume'],
+                'formwork': result['formwork'],
+                'steel': result['steel']
             })
-            st.success(f"✅ เพิ่ม {s_type} จำนวน {s_count} รายการ")
+            st.success(f"✅ เพิ่มคาน {b_count} เส้น")
+            st.rerun()
     
-    # แสดงรายการ Slab
-    if st.session_state.slab_items:
-        st.markdown("### 📋 รายการ Slab")
-        for i, item in enumerate(st.session_state.slab_items):
-            col1, col2, col3 = st.columns([3, 1, 1])
-            with col1:
-                st.write(f"**รายการ {i+1}:** {item['type']} - {item['area']}m² × {item['thickness']}m × {item['count']} ชิ้น")
-            with col2:
-                st.write(f"Volume: {item['volume']:.2f} m³, Steel: {item['steel']:.2f} kg")
-            with col3:
-                if st.button("🗑️ ลบ", key=f"del_s_{i}"):
-                    st.session_state.slab_items.pop(i)
-                    st.rerun()
-    
+    # ===================================
+    # รายการที่เพิ่มแล้ว
+    # ===================================
     st.markdown("---")
+    st.markdown("## 📋 รายการที่เพิ่มแล้ว")
     
-    # ===================================
-    # 4. BEAM
-    # ===================================
-    st.markdown("## 4️⃣ Beam (คาน)")
-    
-    with st.form("beam_form"):
-        col1, col2, col3 = st.columns(3)
+    if st.session_state.items:
+        # แสดงเป็นตาราง
+        df_items = pd.DataFrame(st.session_state.items)
         
-        with col1:
-            b_b = st.number_input("B - Width (m)", value=0.20, step=0.01, key="b_b")
-            b_h = st.number_input("H - Height (m)", value=0.60, step=0.01, key="b_h")
-        with col2:
-            b_length = st.number_input("Length (m)", value=8.25, step=0.1, key="b_length")
-            b_count = st.number_input("จำนวน (Count)", value=1, step=1, min_value=1, key="b_count")
-        
-        submitted_b = st.form_submit_button("➕ เพิ่ม Beam", type="primary")
-        
-        if submitted_b:
-            # คำนวณด้วยสูตรก่อน
-            cut_length = b_length * 0.85  # ประมาณการ
-            volume_cut = b_b * b_h * cut_length * b_count
-            volume_full = b_b * b_h * b_length * b_count
-            steel_cut = volume_cut * 110
-            steel_full = volume_full * 110
-            formwork = 2 * (b_b + b_h) * b_length * b_count
+        # เพิ่มคอลัมน์ลบ
+        for i, row in df_items.iterrows():
+            col1, col2, col3 = st.columns([1, 4, 1])
             
-            # ลองใช้โมเดล
-            data_input = {
-                'B': b_b,
-                'H': b_h,
-                'Length': b_length
-            }
-            
-            model_cut, scaler_cut, features_cut = load_model("beam_cut_length_model.pkl")
-            model_form, scaler_form, features_form = load_model("beam_formwork_model.pkl")
-            
-            if model_cut and model_form:
-                cut_length_ml = predict(model_cut, scaler_cut, features_cut, data_input)
-                if cut_length_ml:
-                    cut_length = cut_length_ml
-                    volume_cut = b_b * b_h * cut_length * b_count
-                    steel_cut = volume_cut * 110
-                    
-                    data_with_cut = {
-                        'B': b_b,
-                        'H': b_h,
-                        'Cut Length': cut_length,
-                        'Length': b_length
-                    }
-                    formwork_ml = predict(model_form, scaler_form, features_form, data_with_cut)
-                    if formwork_ml:
-                        formwork = formwork_ml * b_count
-            
-            st.session_state.beam_items.append({
-                'b': b_b,
-                'h': b_h,
-                'length': b_length,
-                'count': b_count,
-                'cut_length': cut_length,
-                'volume_cut': volume_cut,
-                'volume_full': volume_full,
-                'steel_cut': steel_cut,
-                'steel_full': steel_full,
-                'formwork': formwork
-            })
-            st.success(f"✅ เพิ่ม Beam จำนวน {b_count} รายการ")
-    
-    # แสดงรายการ Beam
-    if st.session_state.beam_items:
-        st.markdown("### 📋 รายการ Beam")
-        for i, item in enumerate(st.session_state.beam_items):
-            col1, col2, col3 = st.columns([3, 1, 1])
             with col1:
-                st.write(f"**รายการ {i+1}:** {item['b']}m × {item['h']}m × {item['length']}m × {item['count']} เส้น")
+                st.write(f"**{i+1}.**")
+            
             with col2:
-                st.write(f"Volume (Full): {item['volume_full']:.2f} m³")
+                st.write(f"**{row['type']}:** {row['description']}")
+                st.caption(f"Vol: {row['volume']:.2f}m³ | Form: {row['formwork']:.2f}m² | Steel: {row['steel']:.2f}kg")
+            
             with col3:
-                if st.button("🗑️ ลบ", key=f"del_b_{i}"):
-                    st.session_state.beam_items.pop(i)
+                if st.button("🗑️", key=f"del_{i}"):
+                    st.session_state.items.pop(i)
                     st.rerun()
+        
+        st.markdown("---")
+        
+        # ปุ่มลบทั้งหมด
+        col1, col2, col3 = st.columns([1, 1, 1])
+        with col2:
+            if st.button("🗑️ ลบทั้งหมด", type="secondary", use_container_width=True):
+                st.session_state.items = []
+                st.rerun()
+    else:
+        st.info("📝 ยังไม่มีรายการ กรุณาเพิ่มรายการจากด้านบน")
     
     # ===================================
     # SUMMARY / TOTAL
     # ===================================
-    st.markdown("---")
-    st.markdown("## 📊 สรุปผลรวมทั้งหมด")
-    
-    total_volume = 0
-    total_formwork = 0
-    total_steel = 0
-    
-    # คำนวณผลรวม Foundation
-    for item in st.session_state.foundation_items:
-        total_volume += item['volume']
-        total_formwork += item['formwork']
-    
-    # คำนวณผลรวม Column
-    for item in st.session_state.column_items:
-        total_volume += item['volume']
-        total_formwork += item['formwork']
-        total_steel += item['steel']
-    
-    # คำนวณผลรวม Slab
-    for item in st.session_state.slab_items:
-        total_volume += item['volume']
-        total_formwork += item['formwork_all']
-        total_steel += item['steel']
-    
-    # คำนวณผลรวม Beam
-    for item in st.session_state.beam_items:
-        total_volume += item['volume_full']
-        total_formwork += item['formwork']
-        total_steel += item['steel_full']
-    
-    if total_volume > 0:
+    if st.session_state.items:
+        st.markdown("---")
+        st.markdown("## 📊 สรุปผลรวม")
+        
+        total_volume = sum(item['volume'] for item in st.session_state.items)
+        total_formwork = sum(item['formwork'] for item in st.session_state.items)
+        total_steel = sum(item['steel'] for item in st.session_state.items)
+        
+        # แสดงผลรวมแบบสวยงาม
         col1, col2, col3 = st.columns(3)
         
         with col1:
             st.markdown(f"""
-            <div style='background-color: #e3f2fd; padding: 20px; border-radius: 10px; text-align: center;'>
-                <h2 style='color: #1976d2; margin: 0;'>📦 Volume</h2>
-                <h1 style='color: #1976d2; margin: 10px 0;'>{total_volume:.2f}</h1>
-                <p style='color: #1976d2; margin: 0; font-size: 1.2em;'>m³</p>
+            <div style='background-color: #e3f2fd; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
+                <h3 style='color: #1976d2; margin: 0;'>📦 คอนกรีต</h3>
+                <h1 style='color: #1976d2; margin: 15px 0; font-size: 3em;'>{total_volume:.1f}</h1>
+                <p style='color: #1976d2; margin: 0; font-size: 1.3em;'>ลูกบาศก์เมตร (m³)</p>
             </div>
             """, unsafe_allow_html=True)
         
         with col2:
             st.markdown(f"""
-            <div style='background-color: #f3e5f5; padding: 20px; border-radius: 10px; text-align: center;'>
-                <h2 style='color: #7b1fa2; margin: 0;'>📐 Formwork</h2>
-                <h1 style='color: #7b1fa2; margin: 10px 0;'>{total_formwork:.2f}</h1>
-                <p style='color: #7b1fa2; margin: 0; font-size: 1.2em;'>m²</p>
+            <div style='background-color: #f3e5f5; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
+                <h3 style='color: #7b1fa2; margin: 0;'>📐 แบบหล่อ</h3>
+                <h1 style='color: #7b1fa2; margin: 15px 0; font-size: 3em;'>{total_formwork:.1f}</h1>
+                <p style='color: #7b1fa2; margin: 0; font-size: 1.3em;'>ตารางเมตร (m²)</p>
             </div>
             """, unsafe_allow_html=True)
         
         with col3:
             st.markdown(f"""
-            <div style='background-color: #fff3e0; padding: 20px; border-radius: 10px; text-align: center;'>
-                <h2 style='color: #e65100; margin: 0;'>🔩 Steel</h2>
-                <h1 style='color: #e65100; margin: 10px 0;'>{total_steel:.2f}</h1>
-                <p style='color: #e65100; margin: 0; font-size: 1.2em;'>kg ({total_steel/1000:.2f} ตัน)</p>
+            <div style='background-color: #fff3e0; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
+                <h3 style='color: #e65100; margin: 0;'>🔩 เหล็กเสริม</h3>
+                <h1 style='color: #e65100; margin: 15px 0; font-size: 3em;'>{total_steel/1000:.1f}</h1>
+                <p style='color: #e65100; margin: 0; font-size: 1.3em;'>ตัน ({total_steel:.0f} kg)</p>
             </div>
             """, unsafe_allow_html=True)
         
-        # ตารางสรุป
-        st.markdown("### 📋 รายละเอียดสรุป")
+        # ตารางสรุปแยกตามประเภท
+        st.markdown("### 📋 สรุปแยกตามประเภท")
+        
+        summary_by_type = {}
+        for item in st.session_state.items:
+            item_type = item['type']
+            if item_type not in summary_by_type:
+                summary_by_type[item_type] = {'volume': 0, 'formwork': 0, 'steel': 0, 'count': 0}
+            summary_by_type[item_type]['volume'] += item['volume']
+            summary_by_type[item_type]['formwork'] += item['formwork']
+            summary_by_type[item_type]['steel'] += item['steel']
+            summary_by_type[item_type]['count'] += 1
         
         summary_data = []
+        for item_type, values in summary_by_type.items():
+            summary_data.append({
+                'ประเภท': item_type,
+                'จำนวนรายการ': values['count'],
+                'คอนกรีต (m³)': f"{values['volume']:.2f}",
+                'แบบหล่อ (m²)': f"{values['formwork']:.2f}",
+                'เหล็ก (kg)': f"{values['steel']:.2f}"
+            })
         
-        if st.session_state.foundation_items:
-            f_vol = sum(i['volume'] for i in st.session_state.foundation_items)
-            f_form = sum(i['formwork'] for i in st.session_state.foundation_items)
-            summary_data.append({'ส่วนงาน': 'Foundation', 'Volume (m³)': f"{f_vol:.2f}", 'Formwork (m²)': f"{f_form:.2f}", 'Steel (kg)': '-'})
+        df_summary = pd.DataFrame(summary_data)
+        st.dataframe(df_summary, use_container_width=True, hide_index=True)
         
-        if st.session_state.column_items:
-            c_vol = sum(i['volume'] for i in st.session_state.column_items)
-            c_form = sum(i['formwork'] for i in st.session_state.column_items)
-            c_steel = sum(i['steel'] for i in st.session_state.column_items)
-            summary_data.append({'ส่วนงาน': 'Column', 'Volume (m³)': f"{c_vol:.2f}", 'Formwork (m²)': f"{c_form:.2f}", 'Steel (kg)': f"{c_steel:.2f}"})
+        # ประมาณการค่าใช้จ่าย (คร่าวๆ)
+        st.markdown("### 💰 ประมาณการค่าใช้จ่าย (คร่าวๆ)")
         
-        if st.session_state.slab_items:
-            s_vol = sum(i['volume'] for i in st.session_state.slab_items)
-            s_form = sum(i['formwork_all'] for i in st.session_state.slab_items)
-            s_steel = sum(i['steel'] for i in st.session_state.slab_items)
-            summary_data.append({'ส่วนงาน': 'Slab', 'Volume (m³)': f"{s_vol:.2f}", 'Formwork (m²)': f"{s_form:.2f}", 'Steel (kg)': f"{s_steel:.2f}"})
+        col1, col2, col3 = st.columns(3)
         
-        if st.session_state.beam_items:
-            b_vol = sum(i['volume_full'] for i in st.session_state.beam_items)
-            b_form = sum(i['formwork'] for i in st.session_state.beam_items)
-            b_steel = sum(i['steel_full'] for i in st.session_state.beam_items)
-            summary_data.append({'ส่วนงาน': 'Beam', 'Volume (m³)': f"{b_vol:.2f}", 'Formwork (m²)': f"{b_form:.2f}", 'Steel (kg)': f"{b_steel:.2f}"})
+        with col1:
+            concrete_price = st.number_input("ราคาคอนกรีต (บาท/m³)", value=3000, step=100)
+        with col2:
+            formwork_price = st.number_input("ราคาแบบหล่อ (บาท/m²)", value=200, step=50)
+        with col3:
+            steel_price = st.number_input("ราคาเหล็ก (บาท/kg)", value=25, step=1)
         
-        if summary_data:
-            df = pd.DataFrame(summary_data)
-            st.dataframe(df, use_container_width=True)
-    else:
-        st.info("📝 กรุณาเพิ่มรายการอย่างน้อย 1 ส่วนงานเพื่อดูผลรวม")
+        cost_concrete = total_volume * concrete_price
+        cost_formwork = total_formwork * formwork_price
+        cost_steel = total_steel * steel_price
+        total_cost = cost_concrete + cost_formwork + cost_steel
+        
+        st.markdown(f"""
+        <div style='background-color: #e8f5e9; padding: 20px; border-radius: 10px; margin-top: 20px;'>
+            <h3 style='color: #2e7d32; margin-top: 0;'>รวมค่าใช้จ่ายประมาณ</h3>
+            <ul style='font-size: 1.1em; color: #2e7d32;'>
+                <li>คอนกรีต: {cost_concrete:,.0f} บาท</li>
+                <li>แบบหล่อ: {cost_formwork:,.0f} บาท</li>
+                <li>เหล็กเสริม: {cost_steel:,.0f} บาท</li>
+            </ul>
+            <h2 style='color: #1b5e20; margin-bottom: 0;'>รวมทั้งหมด: {total_cost:,.0f} บาท</h2>
+        </div>
+        """, unsafe_allow_html=True)
     
     # Footer
     st.markdown("---")
     st.markdown("""
     <div style='text-align: center; color: gray; padding: 20px;'>
-        <p>⚠️ โปรดทราบ: ผลลัพธ์เป็นการประมาณการ ควรตรวจสอบกับแบบรายละเอียดก่อนใช้งานจริง</p>
-        <p>Made with ❤️ for Construction Engineering</p>
+        <p>⚠️ <strong>คำเตือน:</strong> ผลลัพธ์เป็นการประมาณการคร่าวๆ สำหรับการวางแผนเบื้องต้นเท่านั้น</p>
+        <p>กรุณาใช้แบบรายละเอียดและปรึกษาวิศวกรโครงสร้างก่อนการก่อสร้างจริง</p>
+        <p style='margin-top: 20px;'>Made with ❤️ for Construction Engineering</p>
     </div>
     """, unsafe_allow_html=True)
 
